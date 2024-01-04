@@ -1,5 +1,5 @@
 import sqlalchemy
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, MetaData, Table, inspect
 
 # Construir la cadena de conexión dependiendo del prefijo para BDD externas.
 def UriBuilder(option, cred_list):
@@ -27,12 +27,17 @@ def SqliteUriBuilder(db_name):
     return conn_str
 
 # Genera una conexion a partir de la URI construida
-def GenerateConn(conn_str):
+def GenerateSimpleConn(conn_str):
     engine = create_engine(conn_str)
-    inspector = sqlalchemy.inspect(engine)
+    inspector = inspect(engine)
     # Obtener los nombres de las tablas
-    tables = inspector.get_table_names()
-    return tables
+    tables_names = inspector.get_table_names()
+    return tables_names
 
-
-
+def get_column_names(conn_str, table_name):
+    engine = create_engine(conn_str)
+    inspector = inspect(engine)
+    # Obtener los nombres de las columnas de la tabla seleccionada
+    columns = inspector.get_columns(table_name)
+    column_names = [column['name'] for column in columns]
+    return column_names

@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify, redirect, url_for, render_template
 from forms import PickDBPrefixForm, CreateConnForm, CreateSQLiteConnForm
-from helpers import UriBuilder
+from helpers import UriBuilder, SqliteUriBuilder, GenerateSimpleConn
 
 routes = Blueprint('routes', __name__)
 
@@ -18,10 +18,10 @@ def home():
     if request.method == 'POST' & prefixform.validate_on_submit():
         db_prefix = prefixform.db_prefix.data
         if db_prefix:
-            return redirect(url_for('routes.connect_with_prefix', option=db_prefix))
+            return redirect(url_for('routes.select_prefix', option=db_prefix))
 
-@routes.route('/connect', methods=['GET', 'POST'])
-def connect_with_prefix(option):
+@routes.route('/select_prefix', methods=['GET', 'POST'])
+def select_prefix(option):
     form = CreateConnForm()
     form2 = CreateSQLiteConnForm()
     
@@ -40,24 +40,28 @@ def connect_with_prefix(option):
                 'ip': form.conn_ip.data,
                 'port': form.conn_port.data,
                 'dbname': form.conn_dbname.data
-            }           
-            # Generar uri y muestra de tablas de la bdd a conectar
-            if option == '1':
+            }
+            if all(cred_list.values()):
+                # Generar uri y muestra de tablas de la bdd a conectar
                 built_url = UriBuilder(option, cred_list)
-                if gene
+                tables_result = GenerateSimpleConn(built_url)
+                if tables_result:
+                    
+                    return redirect(url_for('routes.create_data', tables_result, built_url))        
                 
-            if option == '2':
-                built_url = UriBuilder(option, cred_list)
-                pass
-            if option == '3':
-                built_url = UriBuilder(option, cred_list)
-                pass
-            if option == '4':
-                built_url = UriBuilder(option, cred_list)
                 
-        
-        
-        
+                
+                
+                
+                
+                
         # si el prefix es de sqlite (interno, direccion en explorador)
         elif form2.validate_on_submit():
-            form2.db_address
+            form2.db_address.data
+
+
+
+
+@routes.route('/create_data', methods=['GET', 'POST'])
+def create_data(engine):
+    pass
