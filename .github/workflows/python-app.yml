@@ -19,21 +19,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
+    - name: Install Python, pipenv and Pipfile packages
+      uses: palewire/install-python-pipenv-pipfile@v3
       with:
-        python-version: "3.10"
-    - name: Upgrade Pip
-      run: pip install --upgrade pip
-    - name: Install Pipenv
-      run: pip install pipenv
-    - name: Enter Pipenv shell & install dependencies
+          python-version: 3.19
+    - name: Install and Lint with flake8
       run: |
-        python -m pipenv shell
-        pipenv install
         pipenv install --dev flake8 pytest
-    - name: Lint with flake8
-      run: |
         # stop the build if there are Python syntax errors or undefined names
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
