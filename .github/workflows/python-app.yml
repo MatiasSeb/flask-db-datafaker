@@ -29,7 +29,7 @@ jobs:
       run: pip install pipenv
     - name: Enter Pipenv shell & install dependencies
       run: |
-        pipenv shell
+        python -m pipenv shell
         pipenv install
         pipenv install --dev flake8 pytest
     - name: Lint with flake8
