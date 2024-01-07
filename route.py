@@ -1,12 +1,8 @@
 from flask import Blueprint, request, jsonify, redirect, url_for, render_template
-from forms import PickDBPrefixForm, CreateConnForm, CreateSQLiteConnForm
-from helpers import UriBuilder, SqliteUriBuilder, GenerateSimpleConn
+from forms import PickDBPrefixForm, CreateConnForm, CreateSQLiteConnForm, TableSelectFromDB
+from helpers import UriBuilder, FetchTableNames, FetchColumnNames
 
 routes = Blueprint('routes', __name__)
-
-@routes.route('/home')
-def home():
-    return 'Hello, World!'
 
 @routes.route('/home', methods=['GET', 'POST'])
 def home():
@@ -44,24 +40,29 @@ def select_prefix(option):
             if all(cred_list.values()):
                 # Generar uri y muestra de tablas de la bdd a conectar
                 built_url = UriBuilder(option, cred_list)
-                tables_result = GenerateSimpleConn(built_url)
+                tables_result = FetchTableNames(built_url)
                 if tables_result:
-                    
-                    return redirect(url_for('routes.create_data', tables_result, built_url))        
-                
-                
-                
-                
-                
-                
-                
+                    return redirect(url_for('routes.select_and_create', tables_result, built_url))
+            else:
+                return render_template('connect.html', form=form)    
         # si el prefix es de sqlite (interno, direccion en explorador)
         elif form2.validate_on_submit():
-            form2.db_address.data
-
+            if form2.db_address.data:
+                built_url = UriBuilder(form2.db_address.data)
+                tables_result = FetchTableNames(built_url)
+                if tables_result:
+                    return redirect(url_for('routes.select_and_create', tables_result, built_url))
+            else:
+                return render_template('connect.html', form=form)
 
 
 
 @routes.route('/create_data', methods=['GET', 'POST'])
-def create_data(engine):
-    pass
+def select_and_create(tables, engine):
+    form = TableSelectFromDB()
+    form.table_name.choices = [(table, table) for table in tables]
+    
+    if request.method == 'GET':
+        return render_template('create.html', form=form)
+    if request.method == 'POST':
+        pass

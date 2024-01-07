@@ -20,6 +20,12 @@ class CreateConnForm(FlaskForm):
     conn_port = StringField('Port', validators=[DataRequired(), Regexp('^[0-9]+$', message='Por favor ingrese un número de puerto válido.')])
     conn_dbname = StringField('Database Name', validators=[DataRequired(), Regexp('^[a-zA-Z0-9_]+$', message='Solo se permiten letras, números y guiones bajos.')])
     submit = SubmitField('Crear conexión')
+
 class CreateSQLiteConnForm(FlaskForm):
     db_address = StringField('Dirección de la base de datos SQLite')
     submit = SubmitField('Guardar')
+
+class TableSelectFromDB(FlaskForm):
+    table_name = SelectField('Nombre tabla', choices=[], validators=[InputRequired()])
+    submit = SubmitField('Seleccionar tabla')
+
