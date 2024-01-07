@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify, redirect, url_for, render_template
 from forms import PickDBPrefixForm, CreateConnForm, CreateSQLiteConnForm, TableSelectFromDB
-from helpers import UriBuilder, FetchTableNames, FetchColumnNames
+from flask_dataemulator_api.functions import UriBuilder, FetchTableNames, FetchColumnNames
 
 routes = Blueprint('routes', __name__)
 
