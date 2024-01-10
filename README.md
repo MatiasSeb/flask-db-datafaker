@@ -1,5 +1,5 @@
 <p align="center">
-  <h2 align="center">Flask Database Data Faker</h3>
+  <h1 align="center">Flask Database Data Faker</h3>
 
   <p align="center">
      Data faker based on desired fake data for developing ambients.
