@@ -1,4 +1,3 @@
-<br/>
 <p align="center">
   <h2 align="center">Flask Database Data Faker</h3>
 
