@@ -1,9 +1,5 @@
 <br/>
 <p align="center">
-  <a href="https://github.com/MatiasSeb/flask-db-datafaker">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
   <h3 align="center">Flask Database Data Faker</h3>
 
   <p align="center">
@@ -19,9 +15,10 @@
     .
     <a href="https://github.com/MatiasSeb/flask-db-datafaker/issues">Request Feature</a>
   </p>
+  ![Downloads](https://img.shields.io/github/downloads/MatiasSeb/flask-db-datafaker/total) ![Contributors](https://img.shields.io/github/contributors/MatiasSeb/flask-db-datafaker?color=dark-green) ![Forks](https://img.shields.io/github/forks/MatiasSeb/flask-db-datafaker?style=social) ![Stargazers](https://img.shields.io/github/stars/MatiasSeb/flask-db-datafaker?style=social) ![Issues](https://img.shields.io/github/issues/MatiasSeb/flask-db-datafaker) ![License](https://img.shields.io/github/license/MatiasSeb/flask-db-datafaker) 
 </p>
 
-![Downloads](https://img.shields.io/github/downloads/MatiasSeb/flask-db-datafaker/total) ![Contributors](https://img.shields.io/github/contributors/MatiasSeb/flask-db-datafaker?color=dark-green) ![Forks](https://img.shields.io/github/forks/MatiasSeb/flask-db-datafaker?style=social) ![Stargazers](https://img.shields.io/github/stars/MatiasSeb/flask-db-datafaker?style=social) ![Issues](https://img.shields.io/github/issues/MatiasSeb/flask-db-datafaker) ![License](https://img.shields.io/github/license/MatiasSeb/flask-db-datafaker) 
+
 
 ## Table Of Contents
 
