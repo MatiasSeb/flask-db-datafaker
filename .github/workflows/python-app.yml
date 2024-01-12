@@ -26,6 +26,9 @@ jobs:
     - name: Install flake8 & pytest as dev dependencies
       run: |
         pipenv install --dev flake8 pytest
+    - name: Update pipenv and Pipfile packages
+      run: |
+        pipenv update
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
