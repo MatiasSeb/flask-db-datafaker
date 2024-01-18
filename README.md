@@ -110,11 +110,9 @@ Distributed under the MIT License. See [LICENSE](https://github.com/MatiasSeb/fl
 ## Authors
 
 * **Matias Bustos Lagos** - *Software Developer* - [Matias Bustos Lagos](https://github.com/MatiasSeb) - *Project managing and developing.*
-* **Shaan Khan** - *Comp Sci Eng* - [Shaan Khan](https://github.com/ShaanCoding) - *Readme Tool*
 
 ## Acknowledgements
 
-* [ShaanCoding](https://github.com/ShaanCoding/)
-* [Othneil Drew](https://github.com/othneildrew/Best-README-Template)
-* [ImgShields](https://shields.io/)
-* [MatiasSeb](https://github.com/MatiasSeb/)
+* [ShaanCoding](https://github.com/ShaanCoding/) - README Tool
+* [Othneil Drew](https://github.com/othneildrew/Best-README-Template) - Readme template for tool
+* [ImgShields](https://shields.io/) README Shields and Images
