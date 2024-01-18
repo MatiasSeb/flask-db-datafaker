@@ -32,9 +32,9 @@ def FetchTableNames(conn_str):
     tables_names = [table['name'] for table in tables]
     return tables_names
 
-def FetchColumnNames(engine, table_name):
+def FetchColumnData(engine, table_name):
     inspector = inspect(engine)
-    # Obtener los nombres de las columnas de la tabla seleccionada
+    # Obtener los nombres y tipos de datos de las columnas de la tabla seleccionada
     columns = inspector.get_columns(table_name)
-    column_names = [column['name'] for column in columns]
-    return column_names
+    column_data = {column['name']: column['type'] for column in columns}
+    return column_data
