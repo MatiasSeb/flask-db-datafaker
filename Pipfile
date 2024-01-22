@@ -8,9 +8,9 @@ flask-sqlalchemy = "*"
 flask = "*"
 flask-wtf = "*"
 pymysql = "*"
-psycopg2 = "*"
 oracledb = "*"
 pyodbc = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 
