@@ -48,16 +48,21 @@ Made with Python Flask, SQLAlchemy (and db prefix connectors), WTForms & JavaScr
 
 ## Getting Started
 
-First, you'll need Python installed in your OS or System. Thats the only prerequisite.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-
-PipEnv
-
+First, you'll need Python installed in your OS or System. After that, you need to have Pip, so you can install pipenv and enter the generated venv.
 ```sh
 python -m pip install pipenv
+```
+
+After that, you'll need to enter the venv with the following command:
+```sh
+python -m pipenv shell
+```
+
+And you'll enter the virtual environment for the app, now, in case Pipenv doesn't work inside the venv, just install it again, and proc the command
+to proceed with the install:
+
+```sh
+python -m pipenv install
 ```
 
 ### Installation
