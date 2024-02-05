@@ -46,38 +46,23 @@ Features :
 
 Made with Python Flask, SQLAlchemy (and db prefix connectors), WTForms & JavaScript. Using PipEnv as a environment and package manager.
 
-## Getting Started
+## Getting Started & Installation
 
 First, you'll need Python installed in your OS or System. After that, you need to have Pip, so you can install pipenv and enter the generated venv.
-```sh
-python -m pip install pipenv
-```
-
-After that, you'll need to enter the venv with the following command:
-```sh
-python -m pipenv shell
-```
-
-And you'll enter the virtual environment for the app, now, in case Pipenv doesn't work inside the venv, just install it again, and proc the command
-to proceed with the install:
-
-```sh
-python -m pipenv install
-```
-
-### Installation
+After checking this, you can clone the app.
 
 1. Clone the repo in the folder you want to use it, but if you use SQLite i suggest you install or clone it inside your project folder.
 
 ```sh
 git clone https://github.com/MatiasSeb/flask-db-datafaker.git
 ```
-
-2. Install the app, and run it within the env from pipenv.
+2. Install the prerequisites for the app, and run it within the env from pipenv.
 ```sh
-pipenv shell
-pipenv install
-flask run
+python -m pip install pipenv
+
+python -m pipenv shell
+
+python -m pipenv install
 ```
 
 ## Usage
