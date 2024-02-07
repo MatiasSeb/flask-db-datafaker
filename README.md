@@ -64,6 +64,14 @@ python -m pipenv shell
 
 python -m pipenv install
 ```
+3. Then, after installing all packages and having the venv from PipEnv already created and entered (obviously), you can start the app with:
+```sh
+flask run 
+```
+or
+```sh
+python app.py
+```
 
 ## Usage
 
